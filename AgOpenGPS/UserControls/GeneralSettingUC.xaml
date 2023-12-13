@@ -1,0 +1,510 @@
+﻿<UserControl x:Class="AgOpenGPS.UserControls.GeneralSettingUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AgOpenGPS.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <!--#region General Setting-->
+    <Grid Grid.Row="2" MaxHeight="510">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="1*" />
+
+        </Grid.RowDefinitions>
+
+        <Grid Margin="10,5" ShowGridLines="False">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <TextBlock
+                                    Margin="0,0,0,5"
+                                    FontSize="14"
+                                    Text="Create a New" />
+                <TextBox MinHeight="40" />
+            </StackPanel>
+            <ui:Button
+                                Grid.Column="1"
+                                Margin="10,0,10,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Style="{StaticResource RoundButtonCustom}">
+                <ui:Button.Content>
+                    <Image
+                                        Width="40"
+                                        Height="40"
+                                        Source="../Assets/FileSave.png" />
+                </ui:Button.Content>
+            </ui:Button>
+            <StackPanel Grid.Column="2">
+                <TextBlock
+                                    Margin="0,0,0,5"
+                                    FontSize="14"
+                                    Text="Save a Copy" />
+                <TextBox MinHeight="40" />
+            </StackPanel>
+            <ui:Button
+                                Grid.Column="3"
+                                Margin="10,0,10,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Style="{StaticResource RoundButtonCustom}">
+                <ui:Button.Content>
+                    <Image
+                                        Width="40"
+                                        Height="40"
+                                        Source="../Assets/FileSave.png" />
+                </ui:Button.Content>
+            </ui:Button>
+        </Grid>
+        <Separator
+                            Grid.Row="1"
+                            Height="2"
+                            HorizontalAlignment="Stretch"
+                            Background="{StaticResource SystemAccentColorSecondaryBrush}" />
+
+        <Grid Grid.Row="2" ShowGridLines="False">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width=".15*" />
+                <ColumnDefinition Width=".7*" />
+            </Grid.ColumnDefinitions>
+            <UniformGrid Columns="4" Rows="4">
+                <UniformGrid.Resources>
+                    <Style BasedOn="{StaticResource DefaultToggleButtonStyle}" TargetType="ToggleButton">
+                        <Style.Resources>
+                            <SolidColorBrush
+                                                x:Key="ControlFillColorDefaultBrush"
+                                                Opacity="1"
+                                                Color="Transparent" />
+                        </Style.Resources>
+                        <Setter Property="VerticalAlignment" Value="Stretch" />
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <SolidColorBrush Opacity=".1" Color="LightGray" />
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Margin" Value="10,5" />
+                        <Setter Property="Padding" Value="0" />
+
+                        <Setter Property="HorizontalAlignment" Value="Stretch" />
+                        <Setter Property="Border.CornerRadius" Value="10" />
+                        <Setter Property="BorderBrush" Value="{StaticResource SystemAccentColorSecondaryBrush}" />
+                        <Setter Property="BorderThickness" Value="1.5" />
+                    </Style>
+                </UniformGrid.Resources>
+
+                <ToggleButton>
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image
+                                            Width="90"
+                                            Height="90"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Source="../Assets/Config/ConD_ExtraGuides.png" />
+                        <TextBlock
+                                            Grid.Row="1"
+                                            Margin="0,0,0,2"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontSize="12"
+                                            Text="Guidlines" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton>
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image
+                                            Width="90"
+                                            Height="90"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Source="../Assets/Sky.png" />
+                        <TextBlock
+                                            Grid.Row="1"
+                                            Margin="0,0,0,2"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontSize="12"
+                                            Text="Brightness" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton>
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image
+                                            Width="90"
+                                            Height="90"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Source="../Assets/Config/ConD_AutoDayNight.png" />
+                        <TextBlock
+                                            Grid.Row="1"
+                                            Margin="0,0,0,2"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontSize="12"
+                                            Text="Field Texture" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton>
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image
+                                            Width="90"
+                                            Height="90"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Source="../Assets/Config/ConD_KeyBoard.png" />
+                        <TextBlock
+                                            Grid.Row="1"
+                                            Margin="0,0,0,2"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontSize="12"
+                                            Text="Sky" />
+                    </Grid>
+                </ToggleButton>
+
+
+
+                <ToggleButton>
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image
+                                            Width="90"
+                                            Height="90"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Source="../Assets/Config/ConD_Grid.png" />
+                        <TextBlock
+                                            Grid.Row="1"
+                                            Margin="0,0,0,2"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontSize="12"
+                                            Text="Auto Day Night" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton>
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image
+                                            Width="90"
+                                            Height="90"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Source="../Assets/Config/ConD_Speedometer.png" />
+                        <TextBlock
+                                            Grid.Row="1"
+                                            Margin="0,0,0,2"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontSize="12"
+                                            Text="Keyboard" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton>
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image
+                                            Width="90"
+                                            Height="90"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Source="../Assets/Config/ConV_CmPixel.png" />
+                        <TextBlock
+                                            Grid.Row="1"
+                                            Margin="0,0,0,2"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontSize="12"
+                                            Text="Start FullScreen" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton>
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image
+                                            Width="90"
+                                            Height="90"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Source="../Assets/Config/ConD_LogNMEA.png" />
+                        <TextBlock
+                                            Grid.Row="1"
+                                            Margin="0,0,0,2"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontSize="12"
+                                            Text="Lightbar" />
+                    </Grid>
+                </ToggleButton>
+
+                <ToggleButton>
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image
+                                            Width="90"
+                                            Height="90"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Source="../Assets/Config/ConD_FloorTexture.png" />
+                        <TextBlock
+                                            Grid.Row="1"
+                                            Margin="0,0,0,2"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontSize="12"
+                                            Text="Polygons" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton>
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image
+                                            Width="90"
+                                            Height="90"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Source="../Assets/Config/ConD_Poligons.png" />
+                        <TextBlock
+                                            Grid.Row="1"
+                                            Margin="0,0,0,2"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontSize="12"
+                                            Text="LogNMEA" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton>
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image
+                                            Width="90"
+                                            Height="90"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Source="../Assets/Config/ConD_FullScreenBegin.png" />
+                        <TextBlock
+                                            Grid.Row="1"
+                                            Margin="0,0,0,2"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontSize="12"
+                                            Text="Grid" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton>
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image
+                                            Width="90"
+                                            Height="90"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Source="../Assets/BrightnessUp.png" />
+                        <TextBlock
+                                            Grid.Row="1"
+                                            Margin="0,0,0,2"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontSize="12"
+                                            Text="Speedo" />
+                    </Grid>
+                </ToggleButton>
+
+                <ToggleButton>
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image
+                                            Width="90"
+                                            Height="90"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Source="../Assets/Config/ConD_Metric.png" />
+                        <!--<TextBlock
+Grid.Row="1"
+Margin="0,0,0,2"
+HorizontalAlignment="Center"
+VerticalAlignment="Center"
+FontSize="12"
+Text="" />-->
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton>
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image
+                                            Width="90"
+                                            Height="90"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Source="../Assets/Config/ConD_Imperial.png" />
+                        <!--<TextBlock
+Grid.Row="1"
+Margin="0,0,0,2"
+HorizontalAlignment="Center"
+VerticalAlignment="Center"
+FontSize="12"
+Text="Hello" />-->
+                    </Grid>
+                </ToggleButton>
+
+
+            </UniformGrid>
+
+            <UniformGrid
+                                Grid.Column="1"
+                                Margin="0,0,0,0"
+                                VerticalAlignment="Center"
+                                Rows="3">
+                <Button
+                                    Height="70"
+                                    MinWidth="70"
+                                    HorizontalAlignment="Center"
+                                    Background="Transparent"
+                                    ToolTip="Guidlines">
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image
+                                            Width="50"
+                                            Height="50"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Source="../Assets/FileSave.png" />
+
+                    </Grid>
+                </Button>
+                <Button
+                                    Height="70"
+                                    MinWidth="70"
+                                    HorizontalAlignment="Center"
+                                    Background="Transparent"
+                                    ToolTip="Brightness">
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image
+                                            Width="50"
+                                            Height="50"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Source="../Assets/FileSaveAs.png" />
+
+                    </Grid>
+                </Button>
+                <Button
+                                    Height="70"
+                                    MinWidth="70"
+                                    HorizontalAlignment="Center"
+                                    Background="Transparent"
+                                    ToolTip="Field Texture">
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image
+                                            Width="50"
+                                            Height="50"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Source="../Assets/FileDontSave.png" />
+
+                    </Grid>
+                </Button>
+            </UniformGrid>
+            <Border
+                                Grid.Column="2"
+                                Margin="5,5,5,5"
+                                Background="{StaticResource ControlFillColorDefaultBrush}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Margin="10,5" Text="Default Vehicale" />
+                </Grid>
+
+            </Border>
+        </Grid>
+
+
+    </Grid>
+    <!--#endregion-->
+</UserControl>

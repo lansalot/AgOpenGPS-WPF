@@ -1,0 +1,21 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:AgOpenGPS.Controls">
+
+    <Style x:Key="PathIconStyle" TargetType="{x:Type Path}">
+        <Setter Property="Stretch" Value="None" />
+        <Setter Property="Fill" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type controls:PathIconElement}}}" />
+        <Setter Property="Width" Value="{Binding Width, RelativeSource={RelativeSource AncestorType={x:Type controls:PathIconElement}}}" />
+        <Setter Property="Height" Value="{Binding Height, RelativeSource={RelativeSource AncestorType={x:Type controls:PathIconElement}}}" />
+        <Setter Property="Margin" Value="{Binding Padding, RelativeSource={RelativeSource AncestorType={x:Type controls:PathIconElement}}}" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Filled, RelativeSource={RelativeSource AncestorType={x:Type controls:PathIconElement}}}" Value="True">
+                <Setter Property="Data" Value="{Binding FilledPath, RelativeSource={RelativeSource AncestorType={x:Type controls:PathIconElement}}}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Filled, RelativeSource={RelativeSource AncestorType={x:Type controls:PathIconElement}}}" Value="False">
+                <Setter Property="Data" Value="{Binding Path, RelativeSource={RelativeSource AncestorType={x:Type controls:PathIconElement}}}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

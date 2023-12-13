@@ -1,0 +1,52 @@
+﻿<Application
+    x:Class="AgOpenGPS.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:con="clr-namespace:AgOpenGPS.Helpers"
+    xmlns:res="clr-namespace:AgOpenGPS.Resources"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:vm="clr-namespace:AgOpenGPS.ViewModels"
+    DispatcherUnhandledException="OnDispatcherUnhandledException"
+    Exit="OnExit"
+    Startup="OnStartup">
+    <Application.Resources>
+        <ResourceDictionary>
+
+
+           
+            <ResourceDictionary.MergedDictionaries>
+              
+                <ui:ThemesDictionary Theme="Light" />
+                <res:ThemesDictionary Theme="Light" />
+                <ui:ControlsDictionary />
+                <ResourceDictionary Source="Resources/Accent.xaml" />
+                <ResourceDictionary Source="Resources/Styles/CustomResourceDictionaries.xaml" />
+                <ResourceDictionary Source="Controls/PathIcon.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <!--<Color x:Key="SystemAccentColorSecondary">red</Color>
+            <Color x:Key="TextOnAccentFillColorPrimary">LightGray</Color>
+            -->
+            <!--  Border brush  -->
+            <!--<Color x:Key="ControlFillColorDefault">yellow</Color>-->
+            <!--<SolidColorBrush x:Key="ControlElevationBorderBrush">Black</SolidColorBrush>-->
+
+            <!--  Mouse over  -->
+            <!--
+            <SolidColorBrush x:Key="ControlFillColorSecondaryBrush">black</SolidColorBrush>
+
+            -->
+            <!--  Control background  -->
+            <!--
+            <Color x:Key="ControlAltFillColorSecondary">Transparent</Color>-->
+
+            <Style TargetType="Page">
+                <Setter Property="Background" Value="{DynamicResource ControlFillColorDefaultBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource TextFillColorPrimaryBrush}" />
+            </Style>
+            <vm:ViewModelLocator x:Key="viewModelLocator"/>
+            <con:BooleanToReBooleanConverter x:Key="BooleanToReBooleanConverter" />
+
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

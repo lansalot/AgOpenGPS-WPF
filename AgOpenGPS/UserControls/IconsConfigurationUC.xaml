@@ -1,0 +1,620 @@
+﻿<UserControl x:Class="AgOpenGPS.UserControls.IconsConfigurationUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AgOpenGPS.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <!--#region Icons Configuration-->
+
+    <Grid ShowGridLines="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Margin="10,10,5,10" Header="Feild Menu">
+            <UniformGrid Rows="5">
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/TramAll.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Terms Lines" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/HeadlandOn.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Headland" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/MakeBoundary.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Boundry" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/MakeBoundaryContour.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Bnd Contour" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/RecPath.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Rec Path" />
+                    </Grid>
+                </ToggleButton>
+            </UniformGrid>
+        </GroupBox>
+        <GroupBox
+         Grid.Column="1"
+         Margin="5,10,5,10"
+         Header="Tool Menu">
+            <UniformGrid Rows="5">
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/ABSmooth.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="AB Smooth" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/HideContour.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Hide Contour" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/Webcam.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="WebCam" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/YouTurnReverse.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Offset Fix" />
+                    </Grid>
+                </ToggleButton>
+            </UniformGrid>
+        </GroupBox>
+        <GroupBox
+         Grid.Column="2"
+         Margin="5,10,5,10"
+         Header="Buttons">
+            <UniformGrid Columns="3" Rows="5">
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/ContourOn.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Contour" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/SectionMasterOff.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Auto Section" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/AutoSteerOff.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Auto Steer" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/CurveOn.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Curve " />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/ManualOff.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Manual Section" />
+                    </Grid>
+                </ToggleButton>
+
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/YouTurnNo.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="You Turn" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/ABLineOn.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="AB Line" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/AgIO.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="AgIO" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/ABLineCycle.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Cycle Lines" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/ModePurePursuit.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Steer Mode" />
+                    </Grid>
+                </ToggleButton>
+
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/z_TurnManual.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="U-Turn" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/z_LateralManual.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Lateral" />
+                    </Grid>
+                </ToggleButton>
+            </UniformGrid>
+
+        </GroupBox>
+        <GroupBox
+         Grid.Column="3"
+         Margin="5,10,5,10"
+         Header="Sounds">
+            <UniformGrid Rows="5">
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/Config/ConF_SteerSound.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Auto Steer" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/Config/ConF_TurnSound.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Uturn" />
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton
+                 Margin="5,5,5,5"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch">
+                    <ToggleButton.Resources>
+                        <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                    </ToggleButton.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Image Height="60" Source="../Assets/Config/ConF_HydLiftSound.png" />
+                        <TextBlock
+                         Grid.Row="1"
+                         Margin="0,3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Hyd Lift" />
+                    </Grid>
+                </ToggleButton>
+
+                <Grid Margin="0,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock
+                     Grid.Row="0"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     FontWeight="Bold"
+                     Text="Startup" />
+                    <ToggleButton
+                     Grid.Row="1"
+                     Margin="5,5,5,5"
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Stretch">
+                        <ToggleButton.Resources>
+                            <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                        </ToggleButton.Resources>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Image Height="60" Source="../Assets/AgIO.png" />
+                            <TextBlock
+                             Grid.Row="1"
+                             Margin="0,3"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center"
+                             FontSize="14"
+                             Text="AutStart AgIO?" />
+                        </Grid>
+                    </ToggleButton>
+
+                </Grid>
+
+
+            </UniformGrid>
+        </GroupBox>
+
+
+    </Grid>
+
+    <!--#endregion-->
+</UserControl>

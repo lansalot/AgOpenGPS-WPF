@@ -1,0 +1,441 @@
+﻿<Page
+    x:Class="AgOpenGPS.Views.Pages.NTRIP_Pages.ClientNTRIP_View"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:AgOpenGPS.Views.Pages.NTRIP_Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Title="ClientNTRIPView"
+    d:DataContext="{d:DesignInstance local:ClientNTRIP_View,
+                                     IsDesignTimeCreatable=False}"
+    d:DesignHeight="450"
+
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <TabControl>
+        <TabItem Header="Source">
+            <ScrollViewer>
+
+                <Border MinHeight="550">
+                    <Border.Resources>
+
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <SolidColorBrush Color="{DynamicResource ApplicationBackgroundColor}" />
+                                </Setter.Value>
+                            </Setter>
+
+                            <Setter Property="Margin" Value="20,10" />
+                            <Setter Property="CornerRadius" Value="10" />
+                            <Setter Property="BorderBrush" Value="#DAAC0C" />
+                            <Setter Property="BorderThickness" Value="1" />
+                        </Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="20" />
+                        </Style>
+                    </Border.Resources>
+
+
+                    <Grid Margin="30,10" ShowGridLines="False">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Grid ShowGridLines="False">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="Host" />
+                                <TextBox Height="40" Margin="0,5,20,0" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="IP" />
+                                <ComboBox
+                                    MinHeight="40"
+                                    Margin="0,5,0,0"
+                                    SelectedIndex="0"
+                                    Style="{DynamicResource DefaultComboBoxStyle}">
+                                    <ComboBoxItem Content="Com 1" />
+                                </ComboBox>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="1">
+                                <TextBlock Text="User Name" />
+                                <TextBox Height="40" Margin="0,5,20,0" />
+                            </StackPanel>
+                            <StackPanel Grid.Row="1" Grid.Column="1">
+                                <TextBlock Text="Password" />
+                                <ui:PasswordBox
+                                    MinHeight="40"
+                                    Margin="0,5,0,0"
+                                    VerticalContentAlignment="Center" />
+                            </StackPanel>
+
+                            <ui:Button
+                                Grid.Row="2"
+                                Grid.ColumnSpan="2"
+                                Width="300"
+                                MinHeight="40"
+                                HorizontalAlignment="Center"
+                                Content="Get source Table"
+                                Style="{StaticResource CustPrimeryButton}" />
+
+                            <StackPanel Grid.Row="3">
+                                <TextBlock Text="Enter Broadcaster URL OR IP " />
+                                <TextBox Height="40" Margin="0,5,20,0" />
+                            </StackPanel>
+                            <StackPanel Grid.Row="3" Grid.Column="1">
+                                <TextBlock Text="Mount" />
+                                <TextBox Height="40" Margin="0,5,0,0" />
+                            </StackPanel>
+                            <ui:Button
+                                Grid.Row="4"
+                                Width="200"
+                                MinHeight="40"
+                                HorizontalAlignment="Left"
+                                Appearance="Primary"
+                                Content="Verify url"
+                                Style="{StaticResource CustDefaultUiButtonStyle}" />
+                            <Grid Grid.Row="4" Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Margin="0,15,0,0"
+                                    VerticalAlignment="Center"
+                                    Text="Default 2101" />
+                                <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                                    <TextBlock Text="Caster port" />
+                                    <ui:NumberBox MinHeight="40" Margin="0,5,0,0" />
+                                </StackPanel>
+
+
+                            </Grid>
+
+                            <StackPanel Grid.Row="5" Grid.Column="0">
+                                <TextBlock Text="IP" />
+                                <ComboBox
+                                    MinHeight="40"
+                                    Margin="0,5,20,0"
+                                    SelectedIndex="0"
+                                    Style="{DynamicResource DefaultComboBoxStyle}">
+                                    <ComboBoxItem Content="Com 1" />
+                                </ComboBox>
+                            </StackPanel>
+
+                        </Grid>
+
+                        <Grid Grid.Row="1" ShowGridLines="False">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+
+                            <ToggleButton
+                                Width="200"
+                                Height="40"
+                                Content="NTRIP On"
+                                Style="{StaticResource ToggleButtonDanger}" />
+                            <ui:Button
+                                Grid.Column="1"
+                                Width="200"
+                                MinHeight="40"
+                                Appearance="Danger"
+                                Content="Cancel"
+                                Style="{StaticResource CustDefaultUiButtonStyle}" />
+                            <ui:Button
+                                Grid.Column="2"
+                                Width="200"
+                                MinHeight="40"
+                                Appearance="Success"
+                                Content="Save"
+                                Style="{StaticResource CustDefaultUiButtonStyle}" />
+                        </Grid>
+
+
+                    </Grid>
+                </Border>
+            </ScrollViewer>
+        </TabItem>
+        <TabItem Header="Position">
+            <ScrollViewer>
+
+                <Border MinHeight="700">
+                    <Border.Resources>
+
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <SolidColorBrush Color="{DynamicResource ApplicationBackgroundColor}" />
+                                </Setter.Value>
+                            </Setter>
+
+                            <Setter Property="Margin" Value="20,10" />
+                            <Setter Property="CornerRadius" Value="10" />
+                            <Setter Property="BorderBrush" Value="#DAAC0C" />
+                            <Setter Property="BorderThickness" Value="1" />
+                        </Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="20" />
+                        </Style>
+                    </Border.Resources>
+
+
+                    <Grid Margin="30,10" ShowGridLines="False">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height=".8*" />
+                                <RowDefinition Height=".7*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid ShowGridLines="False">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="1*" />
+
+                                </Grid.RowDefinitions>
+                                <TextBlock
+                                    Margin="0,0,0,5"
+                                    Text="Manual Fix :"
+                                    TextDecorations="Underline" />
+                                <StackPanel Grid.Row="1">
+                                    <TextBlock Text="Lat" />
+                                    <ui:NumberBox MinHeight="40" Margin="0,5,20,0" />
+                                </StackPanel>
+                                <StackPanel Grid.Row="1" Grid.Column="1">
+                                    <TextBlock Text="Lon" />
+                                    <ui:NumberBox MinHeight="40" Margin="0,5,0,0" />
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="2">
+                                    <TextBlock Text=" " />
+                                    <ComboBox
+                                        MinHeight="40"
+                                        Margin="0,5,20,0"
+                                        SelectedIndex="0"
+                                        Style="{DynamicResource DefaultComboBoxStyle}">
+                                        <ComboBoxItem Content="Com 1" />
+                                    </ComboBox>
+                                </StackPanel>
+
+
+
+                            </Grid>
+
+                            <Grid Grid.Row="1" ShowGridLines="False">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
+
+
+                                </Grid.RowDefinitions>
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Margin="0,0,0,0"
+                                    Text="Send to GPS Using :"
+                                    TextDecorations="Underline" />
+
+
+                                <ui:Button
+                                    Grid.Row="1"
+                                    Width="200"
+                                    MinHeight="40"
+                                    HorizontalAlignment="Left"
+                                    Content="Serial"
+                                    Style="{StaticResource CustPrimeryButton}" />
+                                <ui:Button
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Width="200"
+                                    MinHeight="40"
+                                    HorizontalAlignment="Left"
+                                    Content="UDP"
+                                    Style="{StaticResource CustPrimeryButton}" />
+
+                                <StackPanel Grid.Row="2">
+
+                                    <ui:NumberBox MinHeight="40" Margin="0,5,20,0" />
+                                </StackPanel>
+
+                            </Grid>
+
+                            <Grid
+                                Grid.Row="2"
+                                Margin="0,10,0,0"
+                                ShowGridLines="False">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
+
+
+
+                                </Grid.RowDefinitions>
+                                <TextBlock
+                                    Margin="0,0,0,5"
+                                    Text="Current GPS Fix:"
+                                    TextDecorations="Underline" />
+                                <StackPanel Grid.Row="1">
+                                    <TextBlock Text="Lat" />
+                                    <ui:NumberBox MinHeight="40" Margin="0,5,20,0" />
+                                </StackPanel>
+                                <StackPanel Grid.Row="1" Grid.Column="1">
+                                    <TextBlock Text="Lon" />
+                                    <ui:NumberBox MinHeight="40" Margin="0,5,0,0" />
+                                </StackPanel>
+                                <ui:Button
+                                    Grid.Row="2"
+                                    Width="300"
+                                    MinHeight="40"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    Content="Send to manual Fix"
+                                    Style="{StaticResource CustPrimeryButton}" />
+
+                                <StackPanel
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    VerticalAlignment="Center">
+                                    <TextBlock Text="GGA interval secs" />
+                                    <ui:NumberBox MinHeight="40" Margin="0,5,20,0" />
+                                    <TextBlock Text="0=off" />
+                                </StackPanel>
+
+
+                            </Grid>
+                        </Grid>
+
+                        <Grid Grid.Row="1" ShowGridLines="False">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+
+                            <ToggleButton
+                                Width="200"
+                                Height="40"
+                                Content="NTRIP On"
+                                Style="{StaticResource ToggleButtonDanger}" />
+                            <ui:Button
+                                Grid.Column="1"
+                                Width="200"
+                                MinHeight="40"
+                                Appearance="Danger"
+                                Content="Reset"
+                                Style="{StaticResource CustDefaultUiButtonStyle}" />
+                            <ui:Button
+                                Grid.Column="2"
+                                Width="200"
+                                MinHeight="40"
+                                Appearance="Success"
+                                Content="Save"
+                                Style="{StaticResource CustDefaultUiButtonStyle}" />
+                        </Grid>
+
+
+                    </Grid>
+                </Border>
+            </ScrollViewer>
+        </TabItem>
+        <TabItem Header="Advanced">
+            <ScrollViewer>
+
+                <Border MinHeight="300">
+                    <Border.Resources>
+
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <SolidColorBrush Color="{DynamicResource ApplicationBackgroundColor}" />
+                                </Setter.Value>
+                            </Setter>
+
+                            <Setter Property="Margin" Value="20,10" />
+                            <Setter Property="CornerRadius" Value="10" />
+                            <Setter Property="BorderBrush" Value="#DAAC0C" />
+                            <Setter Property="BorderThickness" Value="1" />
+                        </Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="20" />
+                        </Style>
+                    </Border.Resources>
+
+                    <Grid Margin="30,10" ShowGridLines="False">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Grid.Column="0">
+                            <TextBlock Text="HTTP" />
+                            <ui:NumberBox MinHeight="40" Margin="0,5,20,0" />
+                        </StackPanel>
+                        <ui:Button
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="0 25 0 0"
+                            Width="200"
+                            MinHeight="40"
+                            HorizontalAlignment="Center"
+                            Content="Only Tcp: port"
+                            Style="{StaticResource CustPrimeryButton}" />
+
+                        <StackPanel Grid.Row="1" Grid.Column="0">
+                            <TextBlock Text="UDP send Packet Brust Default" />
+                            <ComboBox MinHeight="40" Margin="0,5,20,0" />
+                        </StackPanel>
+
+                    </Grid>
+                </Border>
+            </ScrollViewer>
+        </TabItem>
+    </TabControl>
+</Page>

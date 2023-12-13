@@ -1,0 +1,865 @@
+﻿<UserControl x:Class="AgOpenGPS.UserControls.ArduinoConfigurationUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AgOpenGPS.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <!--#region Arduino  Configuration-->
+    <TabControl Margin="0,0,0,0" Background="Transparent">
+        <TabItem Header="Machine Module">
+            <Grid ShowGridLines="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height=".3*" />
+                </Grid.RowDefinitions>
+                <Grid ShowGridLines="False">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width=".7*" />
+                    </Grid.ColumnDefinitions>
+
+                    <GroupBox Margin="10,5" Header="Hydraulic Lift Configuration">
+                        <Grid ShowGridLines="False">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width=".5*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <ToggleButton
+                             Width="110"
+                             Height="110"
+                             Margin="0,5"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center">
+                                <ToggleButton.Resources>
+                                    <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                                </ToggleButton.Resources>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*" />
+                                        <RowDefinition Height="auto" />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                     Width="80"
+                                     Height="80"
+                                     Source="../Assets/SwitchOff.png" />
+                                    <TextBlock
+                                     Grid.Row="1"
+                                     Margin="0"
+                                     HorizontalAlignment="Center"
+                                     VerticalAlignment="Center"
+                                     FontSize="12"
+                                     Text="Enable" />
+                                </Grid>
+                            </ToggleButton>
+                            <Grid Grid.Row="1" VerticalAlignment="Center">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="1*" />
+                                </Grid.RowDefinitions>
+                                <TextBlock
+                                 Margin="10,3"
+                                 VerticalAlignment="Center"
+                                 FontSize="14"
+                                 Text="Hydraulic lift look ahead (secs)" />
+                                <ui:NumberBox
+                                 Grid.Row="1"
+                                 MinHeight="40"
+                                 Margin="10,3" />
+
+                            </Grid>
+                            <Grid
+                             Grid.Row="0"
+                             Grid.Column="1"
+                             VerticalAlignment="Center">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="1*" />
+                                </Grid.RowDefinitions>
+                                <TextBlock
+                                 Margin="10,3"
+                                 VerticalAlignment="Center"
+                                 FontSize="14"
+                                 Text="Raise Time (secs)" />
+                                <ui:NumberBox
+                                 Grid.Row="1"
+                                 MinHeight="40"
+                                 Margin="10,3" />
+
+                            </Grid>
+                            <Grid
+                             Grid.Row="1"
+                             Grid.Column="1"
+                             VerticalAlignment="Center">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="1*" />
+                                </Grid.RowDefinitions>
+                                <TextBlock
+                                 Margin="10,3"
+                                 VerticalAlignment="Center"
+                                 FontSize="14"
+                                 Text="Lower Time (secs)" />
+                                <ui:NumberBox
+                                 Grid.Row="1"
+                                 MinHeight="40"
+                                 Margin="10,3" />
+
+                            </Grid>
+
+                            <Image
+                             Grid.Column="2"
+                             Width="100"
+                             Height="100"
+                             Source="../Assets/Config/ConMa_LiftRaiseTime.png" />
+                            <Image
+                             Grid.Row="1"
+                             Grid.Column="2"
+                             Width="100"
+                             Height="100"
+                             Source="../Assets/Config/ConMa_LiftLowerTime.png" />
+                        </Grid>
+                    </GroupBox>
+
+                    <Grid Grid.Column="1" Margin="10,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" VerticalAlignment="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock
+                             Margin="10,3"
+                             VerticalAlignment="Center"
+                             FontSize="14"
+                             Text="User 1" />
+                            <ui:NumberBox
+                             Grid.Row="1"
+                             MinHeight="40"
+                             Margin="10,3" />
+
+                        </Grid>
+                        <Grid Grid.Row="1" VerticalAlignment="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock
+                             Margin="10,3"
+                             VerticalAlignment="Center"
+                             FontSize="14"
+                             Text="User 2" />
+                            <ui:NumberBox
+                             Grid.Row="1"
+                             MinHeight="40"
+                             Margin="10,3" />
+
+                        </Grid>
+                        <Grid Grid.Row="2" VerticalAlignment="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock
+                             Margin="10,3"
+                             VerticalAlignment="Center"
+                             FontSize="14"
+                             Text="User 3" />
+                            <ui:NumberBox
+                             Grid.Row="1"
+                             MinHeight="40"
+                             Margin="10,3" />
+
+                        </Grid>
+                        <Grid Grid.Row="3" VerticalAlignment="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock
+                             Margin="10,3"
+                             VerticalAlignment="Center"
+                             FontSize="14"
+                             Text="User 4" />
+                            <ui:NumberBox
+                             Grid.Row="1"
+                             MinHeight="40"
+                             Margin="10,3" />
+
+                        </Grid>
+                    </Grid>
+
+                </Grid>
+                <Grid
+                 Grid.Row="1"
+                 Margin="10,2"
+                 ShowGridLines="False">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+                    <ToggleButton
+                     Grid.Column="1"
+                     Width="110"
+                     Height="80"
+                     Margin="10,5"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Center">
+                        <ToggleButton.Resources>
+                            <Color x:Key="SystemAccentColorSecondary">LightGreen</Color>
+                        </ToggleButton.Resources>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Image
+                             Width="80"
+                             Height="60"
+                             Source="../Assets/Config/ConSt_InvertRelay.png" />
+                            <TextBlock
+                             Grid.Row="1"
+                             Margin="0"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center"
+                             FontSize="12"
+                             Text="Invert Relays" />
+                        </Grid>
+                    </ToggleButton>
+                    <Grid Grid.Column="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                         Grid.Column="0"
+                         Margin="0,0,10,0"
+                         HorizontalAlignment="Right"
+                         VerticalAlignment="Center"
+                         Text="Send + Save" />
+                        <ui:Button
+                         Grid.Column="1"
+                         Width="150"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Center"
+                         Appearance="Success"
+                         Content="Save Setting"
+                         FontWeight="SemiBold"
+                         Foreground="White" />
+                        <Image
+                         Grid.Column="2"
+                         Width="60"
+                         Height="60"
+                         Margin="0,0,0,0"
+                         HorizontalAlignment="Right"
+                         Source="../Assets/Config/ConSt_Mandatory.png" />
+                    </Grid>
+                </Grid>
+
+            </Grid>
+        </TabItem>
+        <TabItem Header="Sections Configuration">
+            <Grid ShowGridLines="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height=".2*" />
+                </Grid.RowDefinitions>
+
+                <Grid ShowGridLines="False">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+
+
+                    <!--#region Row 1-->
+
+                    <Grid
+                     Grid.Row="0"
+                     Grid.Column="0"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 1" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <Grid
+                     Grid.Row="0"
+                     Grid.Column="1"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 2" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <Grid
+                     Grid.Row="0"
+                     Grid.Column="2"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 3" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <Grid
+                     Grid.Row="0"
+                     Grid.Column="3"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 4" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <Grid
+                     Grid.Row="0"
+                     Grid.Column="4"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 5" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region Row 2-->
+                    <Grid
+                     Grid.Row="1"
+                     Grid.Column="0"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 6" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <Grid
+                     Grid.Row="1"
+                     Grid.Column="1"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 7" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <Grid
+                     Grid.Row="1"
+                     Grid.Column="2"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 8" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <Grid
+                     Grid.Row="1"
+                     Grid.Column="3"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 9" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <Grid
+                     Grid.Row="1"
+                     Grid.Column="4"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 10" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region Row 3-->
+
+                    <Grid
+                     Grid.Row="2"
+                     Grid.Column="0"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 11" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <Grid
+                     Grid.Row="2"
+                     Grid.Column="1"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 12" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <Grid
+                     Grid.Row="2"
+                     Grid.Column="2"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 13" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <Grid
+                     Grid.Row="2"
+                     Grid.Column="3"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 14" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <Grid
+                     Grid.Row="2"
+                     Grid.Column="4"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 15" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region Row 4-->
+                    <Grid
+                     Grid.Row="3"
+                     Grid.Column="0"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 16" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <Grid
+                     Grid.Row="3"
+                     Grid.Column="1"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 17" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <Grid
+                     Grid.Row="3"
+                     Grid.Column="2"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 18" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <Grid
+                     Grid.Row="3"
+                     Grid.Column="3"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 19" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <Grid
+                     Grid.Row="3"
+                     Grid.Column="4"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 20" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region Row 4-->
+                    <Grid
+                     Grid.Row="4"
+                     Grid.Column="0"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 21" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <Grid
+                     Grid.Row="4"
+                     Grid.Column="1"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 22" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <Grid
+                     Grid.Row="4"
+                     Grid.Column="2"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 23" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+                    <Grid
+                     Grid.Row="4"
+                     Grid.Column="3"
+                     VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                         Margin="10,2,10,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         FontSize="14"
+                         Text="Pin 24" />
+                        <ComboBox
+                         Grid.Row="1"
+                         MinHeight="40"
+                         Margin="10,2,10,0" />
+
+                    </Grid>
+
+                    <!--#endregion-->
+
+
+                </Grid>
+                <Grid
+                 Grid.Row="1"
+                 Margin="10,2"
+                 ShowGridLines="False">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+                    <ui:Button
+                     Grid.Column="0"
+                     Width="150"
+                     Margin="10,0,0,0"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Center"
+                     Appearance="Primary"
+                     Content="Back"
+                     FontWeight="SemiBold"
+                     Foreground="White" />
+                    <ui:Button
+                     Grid.Column="1"
+                     Width="150"
+                     Margin="10,0,0,0"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Center"
+                     Appearance="Info"
+                     Content="Action"
+                     FontWeight="SemiBold"
+                     Foreground="White" />
+                    <Grid Grid.Column="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock
+                         Grid.Column="0"
+                         Margin="0,0,10,0"
+                         HorizontalAlignment="Right"
+                         VerticalAlignment="Center"
+                         Text="Send + Save" />
+                        <ui:Button
+                         Grid.Column="1"
+                         Width="150"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Center"
+                         Appearance="Success"
+                         Content="Save Setting"
+                         FontWeight="SemiBold"
+                         Foreground="White" />
+                        <Image
+                         Grid.Column="2"
+                         Width="40"
+                         Height="40"
+                         Margin="0,0,0,0"
+                         HorizontalAlignment="Right"
+                         Source="../Assets/Config/ConSt_Mandatory.png" />
+                    </Grid>
+                </Grid>
+
+            </Grid>
+        </TabItem>
+
+    </TabControl>
+    <!--#endregion-->
+</UserControl>

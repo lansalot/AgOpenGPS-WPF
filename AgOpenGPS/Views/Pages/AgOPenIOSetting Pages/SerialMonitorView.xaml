@@ -1,0 +1,190 @@
+﻿<Page
+    x:Class="AgOpenGPS.Views.Pages.AgOPenIOSetting_Pages.SerialMonitorView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:AgOpenGPS.Views.Pages.AgOPenIOSetting_Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Title="SerialMonitorView"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <Border MinHeight="500">
+        <Border.Resources>
+
+            <Style TargetType="{x:Type Border}">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="{DynamicResource ApplicationBackgroundColor}" />
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="Margin" Value="20,10" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="BorderBrush" Value="#DAAC0C" />
+                <Setter Property="BorderThickness" Value="1" />
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+        </Border.Resources>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            
+            <Grid ShowGridLines="False" Margin="0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width=".5*" />
+                  
+                </Grid.ColumnDefinitions>
+                <ComboBox MinHeight="45" Margin="10,2" />
+                <ComboBox
+                    Grid.Column="1"
+                    MinHeight="45"
+                    Margin="10,2" />
+                <Grid Grid.Column="2" ShowGridLines="False">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                      
+                    </Grid.ColumnDefinitions>
+                    <ui:Button HorizontalAlignment="Center" Style="{StaticResource RoundButtonCustom}">
+                        <ui:Button.Content>
+                            <Image
+                                Width="30"
+                                Height="30"
+                                Source="../../../Assets/plugoff.png" />
+                        </ui:Button.Content>
+                    </ui:Button>
+                    <ui:Button
+                        Grid.Column="1"
+                        HorizontalAlignment="Center"
+                        Style="{StaticResource RoundButtonCustom}">
+                        <ui:Button.Content>
+                            <Image
+                                Width="30"
+                                Height="30"
+                                Source="../../../Assets/plugOn.png" />
+                        </ui:Button.Content>
+                    </ui:Button>
+                  
+                </Grid>
+
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <ListBox
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Background="Gray">
+                    <ListBoxItem Content="hamza" />
+                    <ListBoxItem Content="hamza" />
+                    <ListBoxItem Content="hamza" />
+                    <ListBoxItem Content="hamza" />
+                    <ListBoxItem Content="hamza" />
+                    <ListBoxItem Content="hamza" />
+                    <ListBoxItem Content="hamza" />
+                    <ListBoxItem Content="hamza" />
+                    <ListBoxItem Content="hamza" />
+                    <ListBoxItem Content="hamza" />
+                    <ListBoxItem Content="hamza" />
+                </ListBox>
+            </Grid>
+            <Grid
+                Grid.Row="2"
+                MinHeight="50"
+                Margin="0,5,0,5"
+                ShowGridLines="False">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <ui:Button
+                    MinWidth="50"
+                    MinHeight="50"
+                    HorizontalAlignment="Center"
+                    Appearance="Danger"
+                    Style="{StaticResource CustPrimeryButton}">
+                    <ui:Button.Content>
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Source="{StaticResource DelteIconDrawingImage}" />
+                    </ui:Button.Content>
+                </ui:Button>
+                <ToggleButton
+                    Grid.Column="1"
+                    MinWidth="50"
+                    MinHeight="50"
+                    HorizontalAlignment="Center"
+                    Style="{StaticResource DefaultToggleButtonStyle}">
+                    <ToggleButton.Content>
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Source="{StaticResource DownloadIconDrawingImage}" />
+                    </ToggleButton.Content>
+                </ToggleButton>
+                <ToggleButton
+                    Grid.Column="2"
+                    MinWidth="50"
+                    MinHeight="50"
+                    HorizontalAlignment="Center"
+                    Style="{StaticResource DefaultToggleButtonStyle}">
+                    <ToggleButton.Content>
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Source="{StaticResource RadioStationSignalDrawingImage}" />
+                    </ToggleButton.Content>
+                </ToggleButton>
+                <ToggleButton
+                    Grid.Column="3"
+                    MinWidth="50"
+                    MinHeight="50"
+                    HorizontalAlignment="Center"
+                    Style="{StaticResource DefaultToggleButtonStyle}">
+                    <ToggleButton.Content>
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Source="{StaticResource CommentsDrawingImage}" />
+                    </ToggleButton.Content>
+                </ToggleButton>
+                <ToggleButton
+                    Grid.Column="4"
+                    MinWidth="50"
+                    MinHeight="50"
+                    HorizontalAlignment="Center"
+                    Style="{StaticResource DefaultToggleButtonStyle}">
+                    <ToggleButton.Content>
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Source="{StaticResource DocumentsDrawingImage}" />
+                    </ToggleButton.Content>
+                </ToggleButton>
+                <ui:Button
+                    Grid.Column="5"
+                    MinWidth="100"
+                    MinHeight="40"
+                    Margin="10,0"
+                    Appearance="Success"
+                    Content="Save"
+                    Style="{StaticResource CustDefaultUiButtonStyle}" />
+            </Grid>
+        </Grid>
+    </Border>
+
+</Page>

@@ -1,0 +1,765 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>wpfui-icon.ico</ApplicationIcon>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="wpfui-icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WPF-UI" Version="3.0.0-preview.6" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1 " />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1 " />
+    <PackageReference Include="WpfExtensions.Xaml" Version="1.2.0" />
+    <PackageReference Include="WPFLocalizeExtension" Version="3.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\ABLineCycle.png" />
+    <None Remove="Assets\ABLineOn.png" />
+    <None Remove="Assets\ABSmooth.png" />
+    <None Remove="Assets\AgIO.png" />
+    <None Remove="Assets\Antenna4WD.png" />
+    <None Remove="Assets\ArrowLeft.png" />
+    <None Remove="Assets\ArrowRight.png" />
+    <None Remove="Assets\AutoSteerOff.png" />
+    <None Remove="Assets\AutoSteerOn.png" />
+    <None Remove="Assets\BoundaryRecord.png" />
+    <None Remove="Assets\boundaryStop.png" />
+    <None Remove="Assets\Brand\AoG.png" />
+    <None Remove="Assets\Brand\Case.png" />
+    <None Remove="Assets\Brand\Challenger.png" />
+    <None Remove="Assets\Brand\Claas.png" />
+    <None Remove="Assets\Brand\Deutz.png" />
+    <None Remove="Assets\Brand\Fendt.png" />
+    <None Remove="Assets\Brand\JohnDeere.png" />
+    <None Remove="Assets\Brand\Kubota.png" />
+    <None Remove="Assets\Brand\Massey.png" />
+    <None Remove="Assets\Brand\NewHolland.png" />
+    <None Remove="Assets\Brand\Same.png" />
+    <None Remove="Assets\Brand\Steyr.png" />
+    <None Remove="Assets\Brand\TriangleVehicle.png" />
+    <None Remove="Assets\Brand\Ursus.png" />
+    <None Remove="Assets\Brand\Valtra.png" />
+    <None Remove="Assets\BrightnessDn.png" />
+    <None Remove="Assets\BrightnessUp.png" />
+    <None Remove="Assets\Camera2D64.png" />
+    <None Remove="Assets\Camera3D64.png" />
+    <None Remove="Assets\CameraNorth2D.png" />
+    <None Remove="Assets\CameraNorth64.png" />
+    <None Remove="Assets\Cancel64.png" />
+    <None Remove="Assets\Config\CmPixel.png" />
+    <None Remove="Assets\Config\ConDa_InvertRoll.png" />
+    <None Remove="Assets\Config\ConDa_RemoveOffset.png" />
+    <None Remove="Assets\Config\ConDa_ResetIMU.png" />
+    <None Remove="Assets\Config\ConDa_RollSetZero.png" />
+    <None Remove="Assets\Config\ConD_AutoDayNight.png" />
+    <None Remove="Assets\Config\ConD_ExtraGuides.png" />
+    <None Remove="Assets\Config\ConD_FloorTexture.png" />
+    <None Remove="Assets\Config\ConD_FullScreenBegin.png" />
+    <None Remove="Assets\Config\ConD_Grid.png" />
+    <None Remove="Assets\Config\ConD_Imperial.png" />
+    <None Remove="Assets\Config\ConD_KeyBoard.png" />
+    <None Remove="Assets\Config\ConD_LightBar.png" />
+    <None Remove="Assets\Config\ConD_LogNMEA.png" />
+    <None Remove="Assets\Config\ConD_Metric.png" />
+    <None Remove="Assets\Config\ConD_Poligons.png" />
+    <None Remove="Assets\Config\ConD_RollHelper.png" />
+    <None Remove="Assets\Config\ConD_Sky.png" />
+    <None Remove="Assets\Config\ConD_Speedometer.png" />
+    <None Remove="Assets\Config\ConF_HydLiftSound.png" />
+    <None Remove="Assets\Config\ConF_SteerSound.png" />
+    <None Remove="Assets\Config\ConF_TurnSound.png" />
+    <None Remove="Assets\Config\ConMa_LiftLowerTime.png" />
+    <None Remove="Assets\Config\ConMa_LiftRaiseTime.png" />
+    <None Remove="Assets\Config\ConST_Danfoss.png" />
+    <None Remove="Assets\Config\ConSt_InvertDirection.png" />
+    <None Remove="Assets\Config\ConSt_InvertRelay.png" />
+    <None Remove="Assets\Config\ConSt_InvertWAS.png" />
+    <None Remove="Assets\Config\ConSt_Mandatory.png" />
+    <None Remove="Assets\Config\ConSt_SteerForm.png" />
+    <None Remove="Assets\Config\ConSt_TurnSensor.png" />
+    <None Remove="Assets\Config\ConSt_TurnSensorCurrent.png" />
+    <None Remove="Assets\Config\ConSt_TurnSensorPressure.png" />
+    <None Remove="Assets\Config\ConS_Brand.png" />
+    <None Remove="Assets\Config\ConS_ImplementAntenna.png" />
+    <None Remove="Assets\Config\ConS_ImplementConfig.png" />
+    <None Remove="Assets\Config\ConS_ImplementHitch.png" />
+    <None Remove="Assets\Config\ConS_ImplementSection.png" />
+    <None Remove="Assets\Config\ConS_ImplementSettings.png" />
+    <None Remove="Assets\Config\ConS_ImplementSwitch.png" />
+    <None Remove="Assets\Config\ConS_ModulesMachine.png" />
+    <None Remove="Assets\Config\ConS_ModulesSteer.png" />
+    <None Remove="Assets\Config\ConS_Respnse.png" />
+    <None Remove="Assets\Config\ConS_SourceFix.png" />
+    <None Remove="Assets\Config\ConS_SourcesHeading.png" />
+    <None Remove="Assets\Config\ConS_SourcesRoll.png" />
+    <None Remove="Assets\Config\ConS_VehicleConfig.png" />
+    <None Remove="Assets\Config\ConS_VehicleDim.png" />
+    <None Remove="Assets\Config\ConS_VehicleLines.png" />
+    <None Remove="Assets\Config\ConT_Asymmetric.png" />
+    <None Remove="Assets\Config\ConT_Inner.png" />
+    <None Remove="Assets\Config\ConT_Outer.png" />
+    <None Remove="Assets\Config\ConT_Symmetric.png" />
+    <None Remove="Assets\Config\ConT_TramBBuffOn.png" />
+    <None Remove="Assets\Config\ConT_TramSpacing.png" />
+    <None Remove="Assets\Config\ConU_UturnDistance.png" />
+    <None Remove="Assets\Config\ConU_UturnLength.png" />
+    <None Remove="Assets\Config\ConU_UturnRadius.png" />
+    <None Remove="Assets\Config\ConU_UturnSmooth.png" />
+    <None Remove="Assets\Config\ConU_UturnStepDistance.png" />
+    <None Remove="Assets\Config\ConV_ABLineLength.png" />
+    <None Remove="Assets\Config\ConV_CmPixel.png" />
+    <None Remove="Assets\Config\ConV_GuidanceLookAhead.png" />
+    <None Remove="Assets\Config\ConV_LineWith.png" />
+    <None Remove="Assets\Config\ConV_SnapDistance.png" />
+    <None Remove="Assets\Config\Con_FeatureMenu.png" />
+    <None Remove="Assets\Config\Con_ImplementMenu.png" />
+    <None Remove="Assets\Config\Con_ModulesMenu.png" />
+    <None Remove="Assets\Config\Con_SourcesGPS.png" />
+    <None Remove="Assets\Config\Con_SourcesGPSDual.png" />
+    <None Remove="Assets\Config\Con_SourcesGPSSingle.png" />
+    <None Remove="Assets\Config\Con_SourcesHead.png" />
+    <None Remove="Assets\Config\Con_SourcesMenu.png" />
+    <None Remove="Assets\Config\Con_SourcesRTKAlarm.png" />
+    <None Remove="Assets\Config\Con_TramMenu.png" />
+    <None Remove="Assets\Config\Con_UTurnMenu.png" />
+    <None Remove="Assets\Config\Con_VehicleMenu.png" />
+    <None Remove="Assets\Config\WindowRestore.png" />
+    <None Remove="Assets\ContourOn.png" />
+    <None Remove="Assets\Con_SourcesRTKAlarm.png" />
+    <None Remove="Assets\CurveOn.png" />
+    <None Remove="Assets\DeleteImage.png" />
+    <None Remove="Assets\DnArrow64.png" />
+    <None Remove="Assets\FileDontSave.png" />
+    <None Remove="Assets\FileSave.png" />
+    <None Remove="Assets\FileSaveAs.png" />
+    <None Remove="Assets\HeadlandOn.png" />
+    <None Remove="Assets\HideContour.png" />
+    <None Remove="Assets\HydraulicLiftOff.png" />
+    <None Remove="Assets\image.png" />
+    <None Remove="Assets\ImplementSettings.png" />
+    <None Remove="Assets\MakeBoundary.png" />
+    <None Remove="Assets\MakeBoundaryContour.png" />
+    <None Remove="Assets\ManualOff.png" />
+    <None Remove="Assets\ModePurePursuit.png" />
+    <None Remove="Assets\OK64.png" />
+    <None Remove="Assets\plugoff.png" />
+    <None Remove="Assets\plugOn.png" />
+    <None Remove="Assets\pngwing 1.png" />
+    <None Remove="Assets\QuestionMark.png" />
+    <None Remove="Assets\RadiusWheelBase.png" />
+    <None Remove="Assets\RadiusWheelBase4WD.png" />
+    <None Remove="Assets\RecPath.png" />
+    <None Remove="Assets\Reset_Default.png" />
+    <None Remove="Assets\SectionMasterOff.png" />
+    <None Remove="Assets\SectionOffBelow.png" />
+    <None Remove="Assets\SectionOffBoundary.png" />
+    <None Remove="Assets\Sf_GainTab.png" />
+    <None Remove="Assets\Sf_PP.png" />
+    <None Remove="Assets\Sf_PPTab.png" />
+    <None Remove="Assets\Sf_Stanley.png" />
+    <None Remove="Assets\Sf_SteerTab.png" />
+    <None Remove="Assets\Sky.png" />
+    <None Remove="Assets\SteerZero.png" />
+    <None Remove="Assets\ST_GainTab.png" />
+    <None Remove="Assets\ST_StanleyTab.png" />
+    <None Remove="Assets\ST_SteerTab.png" />
+    <None Remove="Assets\SwitchActiveClosed.png" />
+    <None Remove="Assets\SwitchActiveOpen.png" />
+    <None Remove="Assets\SwitchOff.png" />
+    <None Remove="Assets\TiltDown.png" />
+    <None Remove="Assets\TiltUp.png" />
+    <None Remove="Assets\ToolChkFront.png" />
+    <None Remove="Assets\ToolChkRear.png" />
+    <None Remove="Assets\ToolChkTBT.png" />
+    <None Remove="Assets\ToolChkTrailing.png" />
+    <None Remove="Assets\ToolHitchPageFront.png" />
+    <None Remove="Assets\ToolHitchPageRear.png" />
+    <None Remove="Assets\ToolHitchPageTBT.png" />
+    <None Remove="Assets\ToolHitchPageTrailing.png" />
+    <None Remove="Assets\TramAll.png" />
+    <None Remove="Assets\TriangleVehicle.png" />
+    <None Remove="Assets\UpArrow64.png" />
+    <None Remove="Assets\vehiclePage4WD.png" />
+    <None Remove="Assets\vehiclePageHarvester.png" />
+    <None Remove="Assets\vehiclePageTractor.png" />
+    <None Remove="Assets\Webcam.png" />
+    <None Remove="Assets\WindowNightMode.png" />
+    <None Remove="Assets\WizSteerDot.png" />
+    <None Remove="Assets\WizWasZeroReset.png" />
+    <None Remove="Assets\wpfui-icon-256.png" />
+    <None Remove="Assets\wpfui-icon-1024.png" />
+    <None Remove="Assets\YouTurnNo.png" />
+    <None Remove="Assets\YouTurnReverse.png" />
+    <None Remove="Assets\ZoomIn48.png" />
+    <None Remove="Assets\ZoomOut48.png" />
+    <None Remove="Assets\z_LateralManual.png" />
+    <None Remove="Assets\z_TurnManual.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\ABLineCycle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\ABLineOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\ABSmooth.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\AgIO.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Antenna4WD.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\ArrowLeft.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\ArrowRight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\AutoSteerOff.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\AutoSteerOn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\BoundaryRecord.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\boundaryStop.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Brand\AoG.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Brand\Case.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Brand\Challenger.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Brand\Claas.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Brand\Deutz.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Brand\Fendt.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Brand\JohnDeere.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Brand\Kubota.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Brand\Massey.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Brand\NewHolland.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Brand\Same.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Brand\Steyr.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Brand\TriangleVehicle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Brand\Ursus.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Brand\Valtra.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\BrightnessDn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\BrightnessUp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Camera2D64.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Camera3D64.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\CameraNorth2D.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\CameraNorth64.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cancel64.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\CmPixel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConDa_InvertRoll.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConDa_RemoveOffset.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConDa_ResetIMU.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConDa_RollSetZero.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConD_AutoDayNight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConD_ExtraGuides.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConD_FloorTexture.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConD_FullScreenBegin.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConD_Grid.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConD_Imperial.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConD_KeyBoard.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConD_LightBar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConD_LogNMEA.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConD_Metric.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConD_Poligons.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConD_RollHelper.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConD_Sky.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConD_Speedometer.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConF_HydLiftSound.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConF_SteerSound.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConF_TurnSound.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConMa_LiftLowerTime.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConMa_LiftRaiseTime.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConST_Danfoss.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConSt_InvertDirection.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConSt_InvertRelay.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConSt_InvertWAS.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConSt_Mandatory.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConSt_SteerForm.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConSt_TurnSensor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConSt_TurnSensorCurrent.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConSt_TurnSensorPressure.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConS_Brand.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConS_ImplementAntenna.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConS_ImplementConfig.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConS_ImplementHitch.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConS_ImplementSection.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConS_ImplementSettings.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConS_ImplementSwitch.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConS_ModulesMachine.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConS_ModulesSteer.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConS_Respnse.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConS_SourceFix.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConS_SourcesHeading.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConS_SourcesRoll.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConS_VehicleConfig.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConS_VehicleDim.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConS_VehicleLines.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConT_Asymmetric.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConT_Inner.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConT_Outer.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConT_Symmetric.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConT_TramBBuffOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConT_TramSpacing.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConU_UturnDistance.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConU_UturnLength.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConU_UturnRadius.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConU_UturnSmooth.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConU_UturnStepDistance.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConV_ABLineLength.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConV_CmPixel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConV_GuidanceLookAhead.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConV_LineWith.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\ConV_SnapDistance.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\Con_FeatureMenu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\Con_ImplementMenu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\Con_ModulesMenu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\Con_SourcesGPS.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\Con_SourcesGPSDual.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\Con_SourcesGPSSingle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\Con_SourcesHead.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\Con_SourcesMenu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\Con_SourcesRTKAlarm.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\Con_TramMenu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\Con_UTurnMenu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\Con_VehicleMenu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Config\WindowRestore.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\ContourOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Con_SourcesRTKAlarm.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\CurveOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\DeleteImage.png" />
+    <Resource Include="Assets\DnArrow64.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\FileDontSave.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\FileSave.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\FileSaveAs.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\HeadlandOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\HideContour.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\HydraulicLiftOff.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\image.png" />
+    <Resource Include="Assets\ImplementSettings.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\MakeBoundary.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\MakeBoundaryContour.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\ManualOff.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\ModePurePursuit.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\OK64.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\plugoff.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\plugOn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\pngwing 1.png" />
+    <Resource Include="Assets\QuestionMark.png" />
+    <Resource Include="Assets\RadiusWheelBase.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\RadiusWheelBase4WD.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\RecPath.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Reset_Default.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\SectionMasterOff.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\SectionOffBelow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\SectionOffBoundary.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Sf_GainTab.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Sf_PP.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Sf_PPTab.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Sf_Stanley.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Sf_SteerTab.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Sky.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\SteerZero.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\ST_GainTab.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\ST_SteerTab.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\SwitchActiveClosed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\SwitchActiveOpen.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\SwitchOff.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\TiltDown.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\TiltUp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\ToolChkFront.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\ToolChkRear.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\ToolChkTBT.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\ToolChkTrailing.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\ToolHitchPageFront.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\ToolHitchPageRear.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\ToolHitchPageTBT.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\ToolHitchPageTrailing.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\TramAll.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\TriangleVehicle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\UpArrow64.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\vehiclePage4WD.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\vehiclePageHarvester.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\vehiclePageTractor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Webcam.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\WindowNightMode.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\WizSteerDot.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\WizWasZeroReset.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\wpfui-icon-256.png" />
+    <Resource Include="Assets\wpfui-icon-1024.png" />
+    <Resource Include="Assets\YouTurnNo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\YouTurnReverse.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\ZoomIn48.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\ZoomOut48.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\z_LateralManual.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\z_TurnManual.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\ThemeHelper\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\ST_StanleyTab.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\Lang.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Lang.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Lang.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Lang.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

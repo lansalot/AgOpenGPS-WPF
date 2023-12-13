@@ -1,0 +1,143 @@
+﻿<Page
+    x:Class="AgOpenGPS.Views.Pages.EthernetConfigurationView"
+    xmlns:local="clr-namespace:AgOpenGPS.Views.Pages"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Title="PortSettingView"
+    d:DataContext="{d:DesignInstance local:EthernetConfigurationView,
+                                     IsDesignTimeCreatable=False}"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <Grid ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height=".6*" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="1">
+            <Border.Resources>
+
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <SolidColorBrush Color="{DynamicResource ApplicationBackgroundColor}" />
+                        </Setter.Value>
+                    </Setter>
+
+                    <Setter Property="Margin" Value="20,10" />
+                    <Setter Property="CornerRadius" Value="47" />
+                    <Setter Property="BorderBrush" Value="#DAAC0C" />
+                    <Setter Property="BorderThickness" Value="1" />
+                </Style>
+                <Style TargetType="TextBlock">
+                    <Setter Property="FontSize" Value="20" />
+                </Style>
+            </Border.Resources>
+            <Grid Margin="30,10" ShowGridLines="False">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <TextBlock
+                    Margin="0,10,0,10"
+                    HorizontalAlignment="Center"
+                    FontSize="25"
+                    FontWeight="Regular"
+                    Foreground="{DynamicResource TextFillColorPrimaryBrush}">
+                    <Run Text="Loop Back Address" />
+                    <Run FontSize="16" Text="(Don't Change)" />
+
+                </TextBlock>
+
+                <ui:Button
+                   
+                    HorizontalAlignment="Right"
+                    Style="{StaticResource RoundButtonCustom}">
+                    <ui:Button.Content>
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Source="../../Assets/QuestionMark.png" />
+                    </ui:Button.Content>
+                </ui:Button>
+                <Grid Grid.Row="1" ShowGridLines="False">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <ui:NumberBox MinHeight="45" Margin="15,2" />
+                    <ui:NumberBox
+                        Grid.Column="1"
+                        MinHeight="45"
+                        Margin="15,2" />
+                    <ui:NumberBox
+                        Grid.Column="2"
+                        MinHeight="45"
+                        Margin="15,2" />
+
+                </Grid>
+                <Grid Grid.Row="2" ShowGridLines="False">
+                    <Grid.Resources>
+                       
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FontWeight" Value="Medium" />
+                            <Setter Property="FontSize" Value="16" />
+                            <Setter Property="Margin" Value="0,10" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFillColorPrimaryBrush}" />
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="NMEA to Network" />
+                        <ToggleButton Content="NMNEA" Width="200" />
+                    </StackPanel>
+
+                    <StackPanel
+                        Grid.Column="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <TextBlock Text="Application Plug in" />
+                        <ToggleButton Content="Rate App" Width="200" />
+                    </StackPanel>
+                    <StackPanel
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <TextBlock Text=" " />
+                        <ToggleButton
+                            Width="200"
+                            Content="UDP ON"
+                            Style="{StaticResource ToggleButtonDanger}" />
+                    </StackPanel>
+
+                </Grid>
+                <ui:Button
+                    Grid.Row="3"
+                    MinWidth="200"
+                    MinHeight="40"
+                    HorizontalAlignment="Center"
+                    Appearance="Success"
+                    Content="Save"
+                   
+                    Style="{StaticResource CustDefaultUiButtonStyle}" />
+
+
+            </Grid>
+        </Border>
+    </Grid>
+</Page>
